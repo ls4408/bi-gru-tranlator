@@ -8,6 +8,9 @@ Environment: Python 3.6 with pytorch installed, ubuntu 16.04 (or compatiable ver
 ```python
 python tranlator.py
 ```
+## Process:
+Data preparation--->Build RNN Encoder/Decoder--->Add attention for decoder---->Try Bidirection------>Training model------>Evaluation with BLEU
+<br>
 ## Dataset
 The dataset is bi-language subtitle, originally from opensubtitles.org, and opus.nlpl.eu convert the subtitles into parallel corpus.
 <br>Orginal Data format:tmx
@@ -21,7 +24,7 @@ As I am focusing on the seq-to-seq language models, two Gated recurrent networks
 Due to time limiation, only bi-rnn with 2 layers is tested.(50000 epoches scheduled, 15000 finished)
 <br>
 <br>Optimization methods:
-    Minibatch gradient descent is used to estimate the crossentropy error of the model, and backprogration is used to find the optimal solution.
+    Minibatch gradient descent is used to estimate the optimal solution, and backprogration is used to find gradient descent for the object function given the minibatch data points.
 <br>
 <br>The model is trained on NYU hpc cloud with paramenter set up in run2.sh.
 <br>However, it could be locally trained with cpu( which is recommended for no-cuda devices).
