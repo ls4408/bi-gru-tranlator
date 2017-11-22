@@ -8,17 +8,17 @@ Environment: Python 3.6 with pytorch installed.
 ```python
 python tranlator.py
 ```
-
+## Dataset
 The dataset is bi-language subtitle, originally from opensubtitles.org, and opus.nlpl.eu convert the subtitles into parallel corpus.
-<br>Data format:tmx
+<br>Orginal Data format:tmx
 <br>Data size:202180 pairs of subtitles in the original data set. 131690 pairs are kept (with words appear more than 3 in these corpus)
-<br> Training sample size: 100000, Validation sample size: 22000 Test sample size:9690
-<br>Cleaned data for my model: saved ./data folder in txt format--en.txt & fr.txt.
+<br> Training sample size: 100000 pairs , Validation sample size: 22000 pairs, Test sample size:9690 pairs.
+<br>Cleaned data: saved ./data folder in txt format--en.txt & fr.txt.
 <br>
 ## Model Training
 <br>Language model:
 As I am focusing on the seq-to-seq language models, two Gated recurrent networks are used as encoder and decoders separately.
-Due to time limiation, only bi-rnn with 2 layers is used.
+Due to time limiation, only bi-rnn with 2 layers is tested.(50000 epoches scheduled, 15000 finished)
 <br>
 <br>Optimization methods:
     Minibatch gradient descent is used to estimate the crossentropy error of the model, and backprogration is used to find the optimal solution.
@@ -42,6 +42,7 @@ masked_cross_entropy:define cross entropy error for objective function
 ## To do list:
 Calculate Bleu Score for the validation data set.
 <br>Compare other rnn unit combinations: GRU/LSTM, different parameters.
+Finished 50000 epoches or kill it when the train error converges.
 
 ## Refernce list:
 Effective Approaches to Attention-based Neural Machine Translation
