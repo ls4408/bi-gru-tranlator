@@ -287,7 +287,7 @@ def evaluate_during_train(input_sentence,input_lang,output_lang, max_length,USE_
     text = '<p>&gt; %s</p><p>= %s</p><p>&lt; %s</p>' % (input_sentence, target_sentence, output_sentence)
     
 if __name__ == "__main__":
-    USE_CUDA=True
+    USE_CUDA=False
     # Configure models
     attn_model = 'dot'
     hidden_size = 500
