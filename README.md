@@ -1,10 +1,10 @@
 # Auther: Liwei Song
 # Project name: Bi-GRU Machine translator (French to English) with attention.
 
-Environment: Python 3.6 with pytorch installed.
+Environment: Python 3.6 with pytorch installed, ubuntu 16.04 (or compatiable version on cloud)
 
 
-<br>The translation program could be launched by the followin command:
+<br>The translation program could be launched by the followin command in shell:
 ```python
 python tranlator.py
 ```
