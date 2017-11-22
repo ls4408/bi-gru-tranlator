@@ -14,11 +14,11 @@ dropout=0.5
 End=True
 attn_model='dot'
 
-input_lang1=pickle.load( open( "./input_lang1.p", "rb" ) )
-output_lang1=pickle.load( open( "./output_lang1.p", "rb" ) )
-pairs1=pickle.load( open( "./pairs1.p", "rb" ) )
-s1=torch.load('./model2-update-encoder.pth')
-t1=torch.load('./model2-update-decoder.pth')
+input_lang1=pickle.load( open( "./data/input_lang1.p", "rb" ) )
+output_lang1=pickle.load( open( "./data/output_lang1.p", "rb" ) )
+pairs1=pickle.load( open( "./data/pairs1.p", "rb" ) )
+s1=torch.load('./data/model2-update-encoder.pth')
+t1=torch.load('./data/model2-update-decoder.pth')
 encoder1 = tm.EncoderRNN(input_lang1.n_words, hidden_size, n_layers, dropout=dropout)
 decoder1 = tm.LuongAttnDecoderRNN(attn_model, hidden_size, output_lang1.n_words, n_layers, dropout=dropout)
 encoder1.load_state_dict(s1)
